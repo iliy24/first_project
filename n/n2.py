@@ -1,8 +1,5 @@
 def format_name(last, first, middle=None):
-    """
-    Возвращает строку вида «Фамилия И.О.», если указано отчество,
-    или «Фамилия Имя», если отчество не задано.
-    """
+   
     if middle is None:
         return last + " " + first
     else:
