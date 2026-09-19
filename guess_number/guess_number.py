@@ -1,24 +1,17 @@
-def format_name(last, first, middle=None):
-    """
-    Возвращает строку вида «Фамилия И.О.», если указано отчество,
-    или «Фамилия Имя», если отчество не задано.
-    """
-    if middle is None:
-        return last + " " + first
-    else:
-        return last + " " + first[0] + "." + middle[0] + "."
+from random import randint
 
+number = randint(1, 100)
 
-lst = []
-m = int(input("Введите количество человек: "))
+print('Угадайте число от 1 до 100')
 
-for i in range(m):
-    name = input("Введите ФИО: ").split()
-    if len(name) < 3:
-        lst.append(format_name(name[0], name[1]))
-    else:
-        lst.append(format_name(name[0], name[1], name[2]))
+while True:
+    guess = int(input('Введите число: '))
 
-print()
-for el in lst:
-    print(el)
+    if guess < number:
+        print('Ваше число меньше того, что загадано.')
+    elif guess > number:
+        print('Ваше число больше того, что загадано.')
+    elif guess == number:
+        break
+
+print('Отличная интуиция! Вы угадали число :)')
